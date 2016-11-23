@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <object id="MDF.TaskTest.MyTimer" type="MDF.TaskTest.MyTimer,MDF.TaskTest">
+    <property name="Name" value="我的一个任务"/>
+    <property name="BaseExcuteTime" value="2016/05/26 18:16"/>
+  </object>
+  <object id="MDF.TaskTest.MyTimeSpan" type="MDF.TaskTest.MyTimeSpan,MDF.TaskTest">
+    <property name="Name" value="我的另一个任务"/>
+    <property name="ExcuteSpan" value="5"/>
+  </object>
+
+  <object id="MDF.Framework.Task.Tasker" type="MDF.Framework.Task.Tasker,MDF.Framework">
+    <property name="TaskList">
+      <list>
+        <value>MDF.TaskTest.MyTimer</value>
+        <value>MDF.TaskTest.MyTimeSpan</value>
+      </list>
+    </property>
+  </object>
+</objects>

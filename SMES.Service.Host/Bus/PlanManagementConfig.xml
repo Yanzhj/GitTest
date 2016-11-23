@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<objects xmlns="http://www.springframework.net">
+  <!--制丝批次管理-->
+  <object id="MDF.MES.PlanManagement.CutBatchManagement" type="MDF.MES.PlanManagement.CutBatchManagement,MDF.MES.PlanManagement">
+    <property name="Db" ref="MDF.Framework.Db.IDataBase"/>
+    <property name="ProcessService" ref="MDF.MES.PlanManagement.ProcessCutBatch"/>
+    <property name="BaseInfoService" ref="MDF.MES.PlanManagement.IBaseInfoService"/>
+  </object>
+  <alias name="MDF.MES.PlanManagement.CutBatchManagement" alias="MDF.MES.PlanManagement.ICutBatchManagement"/>
+  <alias name="MDF.MES.PlanManagement.CutBatchManagement" alias="MDF.MES.PlanManagement.ICutBatchQuery"/>
+  
+  <!--基础信息服务-->
+  <object id="MDF.MES.PlanManagement.BaseInfoService" type="MDF.MES.PlanManagement.BaseInfoService,MDF.MES.PlanManagement"/>
+  <alias name="MDF.MES.PlanManagement.BaseInfoService" alias="MDF.MES.PlanManagement.IBaseInfoService"/>
+  
+  <!--对计划添加辅助信息-->
+  <object id="MDF.MES.PlanManagement.AddProductionPlanAssistantInfo" type="MDF.MES.PlanManagement.AddProductionPlanAssistantInfo,MDF.MES.PlanManagement">
+    <property name="Db" ref="MDF.Framework.Db.IDataBase"/>
+    <property name="BaseInfoService" ref="MDF.MES.PlanManagement.IBaseInfoService"/>
+  </object>
+  <!--添加计划编码-->
+  <object id="MDF.MES.PlanManagement.DefaultAddBatchPlanCode" type="MDF.MES.PlanManagement.DefaultAddBatchPlanCode,MDF.MES.PlanManagement">
+    <property name="Db" ref="MDF.Framework.Db.IDataBase"/>
+    <property name="BaseInfoService" ref="MDF.MES.PlanManagement.IBaseInfoService"/>
+  </object>
+
+  <object id="MDF.MES.PlanManagement.ProcessCutBatch" type="MDF.MES.PlanManagement.ProcessCutBatch,MDF.MES.PlanManagement">
+    <property name="Nodes">
+      <list>
+        <ref object="MDF.MES.PlanManagement.AddProductionPlanAssistantInfo" />
+        <ref object="MDF.MES.PlanManagement.DefaultAddBatchPlanCode"/>
+      </list>
+    </property>
+  </object>
+  
+  
+  <!--物料服务-->
+
+  <object id="MDF.MES.PlanManagement.IMaterialService" type="MDF.MES.PlanManagement.MaterialService,MDF.MES.PlanManagement">
+    <property name="Db" ref="MDF.Framework.Db.IDataBase"/>
+  </object>
+  
+</objects>

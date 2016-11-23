@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-configuration  xmlns="urn:nhibernate-configuration-2.2" >
+  <!--配置Database-->
+  <session-factory name="NHibernate_MESDB">
+    <!--数据库驱动-->
+    <!--sqlServer-->
+    <property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
+    <!--<property name="connection.driver_class">NHibernate.Driver.OracleClientDriver</property>-->
+    <!--数据库连接字符串-->
+    <!--<property name="connection.connection_string">
+      Server=10.17.12.115\SQLEXPRESS;initial catalog=MDF_MESDB;uid=sa;pwd=sapassword;
+      -->
+    <!--Server=124.127.137.227,4665;initial catalog=MDFDB;uid=sa;pwd=dcba4321@!;-->
+    <!--
+      -->
+    <!--Server=.;initial catalog=MDFDB;uid=sa;pwd=8888;-->
+    <!--
+    </property>-->
+
+    <!--<property name="connection.connection_string">
+      User ID=system;Password=orcl;Data Source=XZZMESDB;
+    </property>-->
+
+    <!--<property name="connection.connection_string">
+      Server=10.164.56.55;initial catalog=SMESTEST;uid=sa;pwd=XCicss2014!;
+    </property>-->
+
+
+    <!--<property name="connection.connection_string">
+      Server=192.168.1.137\MSSQLSERVER2012;initial catalog=SMES;uid=sa;pwd=abcd1234!;
+    </property>-->
+
+    <!--<property name="connection.connection_string">
+      User ID=system;Password=SYSTEM;Data Source=localhost/ORCL;
+    </property>-->
+
+    <property name="connection.connection_string">
+      <!--Server=localhost;initial catalog=SMES;uid=sa;pwd=ABCabc123;-->
+      <!--User ID=system;Password=ABCabc123;Data Source=localhost/SMES;-->
+      <!--User ID=system;Password=ABCabc123;Data Source=10.154.196.81/SMES;-->
+      <!--User ID=system;Password=123;Data Source=10.99.200.132/TSMESDB;-->
+      <!--User ID=system;Password=ABCabc123;Data Source=10.46.157.132/SMES;-->
+
+      <!--Server=10.164.192.183;initial catalog=SMES_Online;uid=sa;pwd=1qaz@WSX;-->
+      <!--Server=10.65.16.222;initial catalog=LYSMES;uid=sa;pwd=888888;-->
+      <!--Server=10.65.16.240;initial catalog=LYSMES;uid=sa;pwd=lysmes*123456;-->
+      <!--User ID=system;Password=nnmes;Data Source=10.162.80.11/nnmes11;-->
+      <!--User ID=system;Password=nnmes;Data Source=10.162.80.9/nnmes9;-->
+      Server=localhost\MSSQLSERVER1;initial catalog=SMESDB;uid=sa;pwd=sa;
+      <!--Server=10.114.128.190;initial catalog=SMESDB;uid=sa;pwd=SiemensSaMes;-->
+    </property>
+
+    <!--数据库方言MsSql2008Dialect-->
+    <property name="dialect">NHibernate.Dialect.MsSql2008Dialect</property>
+    <!--<property name="dialect">NHibernate.Dialect.Oracle10gDialect</property>-->
+
+
+    <!--配置Session上下文，可选项wcf_operation、call、thread_static、web-->
+    <property name="current_session_context_class">wcf_operation</property>
+    <!--配置动态代理-->
+    <!--<property name="proxyfactory.factory_class">NHibernate.Bytecode.DefaultProxyFactoryFactory,NHibernate</property>-->
+    <!--<property name="proxyfactory.factory_class">NHibernate.Bytecode.DefaultProxyFactoryFactory,NHibernate</property>-->
+    <property name="connection.release_mode">after_transaction</property>
+
+    <!--配置是否显示Sql-->
+    <property name="show_sql">false</property>
+    <!--配置实体对象程序集-->
+
+    <mapping assembly="SMES.Framework"/>
+    <mapping assembly="SMES.FrameworkAdpt"/>
+
+    <!--<mapping assembly="SMES.Com.FactoryModelAdpt"/>
+    <mapping assembly="SMES.Com.FactoryModelCore"/>
+    <mapping assembly="SMES.Com.ProductStandardSvc"/>
+    <mapping assembly="SMES.Com.ProductStandardCore"/>
+    <mapping assembly="SMES.Com.ProductStandardAdpt"/>
+    <mapping assembly="SMES.Com.ProductStandardAdptIfs"/>-->
+
+
+
+
+    <!--<mapping assembly="SMES.Com.DispatchAdpt"/>
+    <mapping assembly="SMES.Com.DispatchCore"/>
+
+    <mapping assembly="SMES.Com.ScheduleAdpt"/>
+    <mapping assembly="SMES.Com.ScheduleCore"/>
+
+    <mapping assembly="SMES.Com.PlanAdpt"/>
+    <mapping assembly="SMES.Com.PlanCore"/>
+
+    <mapping assembly="SMES.Pack.Aps.Core"/>
+    <mapping assembly="SMES.Pack.Aps.Domain"/>
+
+    <mapping assembly="SMES.DataStructCore"/>-->
+
+    <!--<mapping assembly="SMES.OUT.ComponentCore"/>-->
+    <!--<mapping assembly="SMES.Com.FactoryCalendarAdpt"/>
+    <mapping assembly="SMES.Com.FactoryCalendarCore"/>
+    <mapping assembly="SMES.Com.FactoryCalendarSvc"/>-->
+    <!--<mapping assembly="SMES.Com.EquipmentAdpt"/>
+    <mapping assembly="SMES.Com.EquipmentCore"/>
+    <mapping assembly="SMES.Com.EquipmentSvc"/>-->
+
+    <!--<mapping assembly="SMES.Com.QualityInspection"/>
+    <mapping assembly="SMES.Com.QualityInspection.Svc"/>-->
+    <!--<mapping assembly="SMES.Com.PlanAdpt"/>
+    <mapping assembly="SMES.Com.PlanCore"/>
+    <mapping assembly="SMES.Com.PlanSvc"/>-->
+
+    <!--<mapping assembly="SMES.Integration.Interface"/>-->
+    <!--<mapping assembly="NBMES.ITG"/>-->
+
+    <!--<mapping assembly="IntegrationCoreTest"/>-->
+    <!--<mapping assembly="SMES.Com.CostManagmentAdpt"/>
+    <mapping assembly="SMES.Com.CostManagmentCore"/>
+
+    <mapping assembly="SMES.Com.CostManagmentSvc"/>-->
+  </session-factory>
+</hibernate-configuration>
